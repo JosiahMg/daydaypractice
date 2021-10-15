@@ -4,7 +4,7 @@
 
 输入数据格式:
 csv的数据格式为QA数据:
-colums = [question  answer]
+colums = [question:Text , answer:Text]
 
 输出数据格式:
 json数据格式:

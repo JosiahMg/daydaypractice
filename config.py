@@ -10,4 +10,12 @@ root_outs_dir = os.path.join(root_dir, 'corpus/final')
 # 所有ai问答的csv文件
 ai_corpus_path = os.path.join(root_corpus_dir, 'ai')
 
+# 天池新闻脱敏数据集
+tianchi_news_root_path = os.path.join(root_corpus_dir, 'tianchi_news')
+tianchi_news_train_path = os.path.join(tianchi_news_root_path, 'train_set.csv')
+tianchi_news_test_a_path = os.path.join(tianchi_news_root_path, 'test_a.csv')
+tianchi_news_test_b_path = os.path.join(tianchi_news_root_path, 'test_b.csv')
+# 生成的文件用于fasttext分类训练
+tianchi_news_fasttext_classify = os.path.join(root_outs_dir, 'train_fasttext.csv')
+
 

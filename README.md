@@ -6,7 +6,9 @@
 ### final
 处理后的数据
 ### origin
-存放原始语料库
+存放原始语料库  
+[数据下载地址](https://pan.baidu.com/s/1-XbbP2O2n4OaTYG4z8yNvw)
+提取码：y2k5
 #### ai
 人工智能问答语料库
 
@@ -20,5 +22,7 @@
 
 ## csv_merge_json
 将文件夹 corpus/origin/ai/*.csv 合并到一个json文件
+
+
 
 
