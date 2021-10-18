@@ -18,7 +18,10 @@ import pandas as pd
 import config
 
 # nrows: 计算方便只加载100行
-df_all = pd.read_csv(config.tianchi_news_train_path, sep='\t', nrows=100)
+# skiprows: =0: 忽略前n行, [0] 忽略第0行
+# header=[0]: 0行为 columns
+df_all = pd.read_csv(config.tianchi_news_train_path, sep='\t', nrows=100, skiprows=0, header=[0])
+print(df_all[:5])
 
 # df_all['label']为int类型，转换成str类型
 df_all['label_ft'] = '__label__' + df_all['label'].astype(str)

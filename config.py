@@ -19,3 +19,10 @@ tianchi_news_test_b_path = os.path.join(tianchi_news_root_path, 'test_b.csv')
 tianchi_news_fasttext_classify = os.path.join(root_outs_dir, 'train_fasttext.csv')
 
 
+# corpus in one time
+gensim_corpus = os.path.join(root_corpus_dir, 'gensim_corpus.txt')
+
+# 小黄鸡
+xiaohuangji_corpus = os.path.join(root_corpus_dir, 'xiaohuangji.conv')
+# 处理后的小黄鸡
+xiaohuangji_csv = os.path.join(root_outs_dir, 'xiaohuangji.csv')
