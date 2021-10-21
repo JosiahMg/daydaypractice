@@ -66,7 +66,7 @@ def load_candidate(all_files: List[Text]):
 
 # 保存pkl文件
 def save_load_candidate(candidates):
-    json.dump(candidates, open(candidate_file, 'w'))
+    json.dump(candidates, open(candidate_file, 'w'), ensure_ascii=False, indent=2)
 
 
 # 纠正candidate的权重
