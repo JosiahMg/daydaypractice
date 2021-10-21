@@ -1,6 +1,6 @@
 """
 功能说明:
-将文件夹 corpus/origin/ai/*.csv 合并到一个json文件
+将文件夹 corpus/origin/*.csv (config.ai_corpus_path) 合并到一个json文件
 
 输入数据格式:
 csv的数据格式为QA数据:
