@@ -13,7 +13,7 @@ candidate_file = 'candidates.json'
 # 需要复习的文件夹
 base_dirs = ['data-processing', 'models', 'python-package']
 # 忽略不需要复习的文件
-ignore_file = ['config.py', 'counter.py']
+ignore_file = ['config.py', 'main.py']
 # 需要复习的次数
 exercise_times = 100
 
