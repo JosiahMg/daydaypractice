@@ -3,6 +3,7 @@
 
 """
 import pandas as pd
+import config
 
 df = pd.DataFrame(columns=["epoch", "train_loss", "train_auc", "test_loss", "test_auc"], index=None)
 
@@ -17,5 +18,5 @@ log_dic = {"epoch": 2,
 df = df.append([log_dic])
 
 # 需要index=False
-df.to_csv('test.csv', sep=',', index=False)
+df.to_csv(config.dict_csv_path, sep=',', index=False)
 

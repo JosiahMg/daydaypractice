@@ -26,3 +26,10 @@ gensim_corpus = os.path.join(root_corpus_dir, 'gensim_corpus.txt')
 xiaohuangji_corpus = os.path.join(root_corpus_dir, 'xiaohuangji.conv')
 # 处理后的小黄鸡
 xiaohuangji_csv = os.path.join(root_outs_dir, 'xiaohuangji.csv')
+
+# name
+name_train_path = os.path.join(root_corpus_dir, 'name/names_train.csv')
+name_test_path = os.path.join(root_corpus_dir, 'name/names_test.csv')
+
+# 通过字典的形式生成csv文件
+dict_csv_path = os.path.join(root_outs_dir, 'dict_csv.csv')

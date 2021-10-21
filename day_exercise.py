@@ -16,6 +16,8 @@ base_dirs = ['data-processing', 'models', 'python-package']
 ignore_file = ['config.py', 'main.py']
 # 需要复习的次数
 exercise_times = 100
+# 每次复习的个数
+choice_size = 1
 
 
 def init_candidate(all_files):
@@ -69,7 +71,7 @@ def save_load_candidate(candidates):
     json.dump(candidates, open(candidate_file, 'w'), ensure_ascii=False, indent=2)
 
 
-# 纠正candidate的权重
+# 更新candidate的权重
 def update_candidate_weights(chosen_files, all_files, candidates):
     weights = 0.0
     num_files = len(all_files) - len(chosen_files)
@@ -148,7 +150,7 @@ def main_process():
             files.append(key)
             weights.append(value)
         weights = get_choice_probability(weights)
-        choice_file.append(np.random.choice(files, p=weights))
+        choice_file.extend(np.random.choice(files, size=choice_size, replace=False, p=weights))
 
         candidates = update_candidate_weights(choice_file, all_files, candidates)
 
