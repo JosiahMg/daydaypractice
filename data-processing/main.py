@@ -1,19 +1,9 @@
 import pandas as pd
 import config
-import os
 
-from pprint import pprint
 
-df_merge = {}
+df = pd.read_csv(config.tianchi_news_train_path, encoding='utf-8', nrows=10, header=[0], sep='\t')
+print(df.columns)
+df['label_str'] = '__label__' + df['label'].astype(str)
 
-for root, dirs, files in os.walk(config.ai_corpus_path):
-    for file in files:
-        filenames = os.path.join(root, file)
-        df = pd.read_csv(filenames, encoding='utf-8', header=[0])
-        for q, a in zip(df['question'], df['answer']):
-            df_merge[q] = {}
-            df_merge[q]['answer'] = a
-            df_merge[q]['entity'] = []
-
-pprint(df_merge)
-
+df[['label_str', 'text']].to_csv('test.csv', encoding='utf-8', index=False, sep='\t')

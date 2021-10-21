@@ -1,13 +1,18 @@
-from smart_open import open
+from collections import Counter
+import nltk
+
+text = """Our legislation on participating in a bid is clear: no one can be prohibited, 
+          said Mourao, adding the only thing the company must do is to demonstrate its 
+          transparency (in keeping) with the rules that will be established for the process."""
 
 
-class IterRead:
-    def __iter__(self):
-        for line in open('https://radimrehurek.com/gensim_3.8.3/auto_examples/core/mycorpus.txt'):
-            yield line.strip()
+text = nltk.word_tokenize(text)
+
+ct = Counter()
 
 
-iter_data = IterRead()
+for word in text:
+    ct[word] += 1
 
-for line in iter_data:
-    print(line)
+print(ct)
+print(list(ct.elements()))
