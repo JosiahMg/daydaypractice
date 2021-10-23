@@ -33,3 +33,7 @@ name_test_path = os.path.join(root_corpus_dir, 'name/names_test.csv')
 
 # 通过字典的形式生成csv文件
 dict_csv_path = os.path.join(root_outs_dir, 'dict_csv.csv')
+
+# log.conf
+log_conf = os.path.join(root_dir, 'log/log.conf')
+

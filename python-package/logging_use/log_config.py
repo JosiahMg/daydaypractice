@@ -2,7 +2,6 @@
 使用logging.config作为未知文件
 
 """
-import logging
 import logging.config
 
 
