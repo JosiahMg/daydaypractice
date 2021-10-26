@@ -24,7 +24,7 @@ class LinearByHand:
             if i.grad is not None:
                 i.grad.data.zero_()
             else:
-                print('grad in none')
+                print('grad is none')
         loss.backward()
         return loss.data
 

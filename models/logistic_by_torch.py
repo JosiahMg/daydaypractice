@@ -79,6 +79,7 @@ for epoch in range(num_epochs):
         print(f'epoch = {epoch+1} loss = {loss.item():.4f}')
 
 with torch.no_grad():
+    model.eval() # 作用是让dropout全部生效
     y_predicted = model(X_test)
     y_predicted_cls = y_predicted.round()
     acc = y_predicted_cls.eq(y_test).sum().item() / float(y_test.shape[0])

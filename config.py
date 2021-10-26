@@ -37,3 +37,5 @@ dict_csv_path = os.path.join(root_outs_dir, 'dict_csv.csv')
 # log.conf
 log_conf = os.path.join(root_dir, 'log/log.conf')
 
+# wine data
+wine_path = os.path.join(root_corpus_dir, 'wine.csv')

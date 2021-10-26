@@ -46,5 +46,21 @@
   "python-package\\logging_use\\log_config.py": {
     "probability": 0.01524157902758726,
     "counter": 1
+  },
+  "data-processing\\dataset_wine.py": {
+    "probability": 0.0,
+    "counter": 1
+  },
+  "models\\linear_by_hand.py": {
+    "probability": 0.0,
+    "counter": 1
+  },
+  "models\\linear_by_torch.py": {
+    "probability": 0.0,
+    "counter": 1
+  },
+  "models\\logistic_by_torch.py": {
+    "probability": 0.0,
+    "counter": 1
   }
 }
