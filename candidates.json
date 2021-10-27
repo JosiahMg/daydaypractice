@@ -1,66 +1,66 @@
 {
   "data-processing\\corpus_stream.py": {
-    "probability": 0.071787837219936,
-    "counter": 1
+    "probability": 0.0,
+    "counter": 2
   },
   "data-processing\\csv_fasttext_classify.py": {
-    "probability": 0.059442158207590315,
+    "probability": 0.07723416145912718,
     "counter": 1
   },
   "data-processing\\csv_merge_csv.py": {
-    "probability": 0.18289894833104714,
+    "probability": 0.20069095158258402,
     "counter": 0
   },
   "data-processing\\csv_merge_json.py": {
-    "probability": 0.01524157902758726,
+    "probability": 0.033033582279124125,
     "counter": 1
   },
   "data-processing\\xiaohuangji_csv.py": {
-    "probability": 0.18289894833104714,
-    "counter": 0
+    "probability": 0.005598740029467053,
+    "counter": 1
   },
   "python-package\\collections_use\\defaultdict.py": {
-    "probability": 0.18289894833104714,
+    "probability": 0.20069095158258402,
     "counter": 0
   },
   "python-package\\gensim_use\\corpora.py": {
-    "probability": 0.0,
+    "probability": 0.01779200325153686,
     "counter": 1
   },
   "python-package\\pandas_use\\create_csvfile.py": {
-    "probability": 0.18289894833104714,
+    "probability": 0.20069095158258402,
     "counter": 0
   },
   "python-package\\collections_use\\counter.py": {
-    "probability": 0.059442158207590315,
+    "probability": 0.07723416145912718,
     "counter": 1
   },
   "data-processing\\create_vocab.py": {
-    "probability": 0.03200731595793324,
+    "probability": 0.0497993192094701,
     "counter": 1
   },
   "python-package\\logging_use\\log_class.py": {
-    "probability": 0.01524157902758726,
+    "probability": 0.033033582279124125,
     "counter": 1
   },
   "python-package\\logging_use\\log_config.py": {
-    "probability": 0.01524157902758726,
+    "probability": 0.033033582279124125,
     "counter": 1
   },
   "data-processing\\dataset_wine.py": {
-    "probability": 0.0,
+    "probability": 0.01779200325153686,
     "counter": 1
   },
   "models\\linear_by_hand.py": {
-    "probability": 0.0,
+    "probability": 0.01779200325153686,
     "counter": 1
   },
   "models\\linear_by_torch.py": {
-    "probability": 0.0,
+    "probability": 0.01779200325153686,
     "counter": 1
   },
   "models\\logistic_by_torch.py": {
-    "probability": 0.0,
+    "probability": 0.01779200325153686,
     "counter": 1
   }
 }

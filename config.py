@@ -39,3 +39,8 @@ log_conf = os.path.join(root_dir, 'log/log.conf')
 
 # wine data
 wine_path = os.path.join(root_corpus_dir, 'wine.csv')
+
+# imdb sentiment pos and neg
+imdb_train_path = os.path.join(root_corpus_dir, 'aclImdb/train')
+imdb_test_path = os.path.join(root_corpus_dir, 'aclImdb/test')
+imdb_vocab = os.path.join(root_outs_dir, 'imdb.vocab')

@@ -34,11 +34,11 @@ dictionary = corpora.Dictionary(processed_corpus)
 
 # 迭代器，读取语料库
 class MyCorpus:
-    def __iter__(self):
+    def __iter__(self): # KEYPOINT
         # for line in open(corpus_file):
         for line in open('https://radimrehurek.com/gensim_3.8.3/auto_examples/core/mycorpus.txt'):
             # assume there's one document per line, tokens separated by whitespace
-            yield dictionary.doc2bow(line.lower().split())
+            yield dictionary.doc2bow(line.lower().split()) # KEYPOINT
 
 
 corpus_memory_friendly = MyCorpus()  # doesn't load the corpus into memory!
