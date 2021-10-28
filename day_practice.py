@@ -59,16 +59,19 @@ def load_candidate(all_files: List[Text]):
         # 遍历所有文件，看看是否有新增加的文件
         for file in all_files:
             if file not in candidates:
-                candidates[file] = {'probability': each_discard_weight, 'counter': 1}
+                candidates[file] = {
+                    'probability': each_discard_weight, 'counter': 1}
                 new_lists.append(file)
             else:
-                candidates[file]['probability'] = candidates[file]['probability'] + each_discard_weight
+                candidates[file]['probability'] = candidates[file]['probability'] + \
+                    each_discard_weight
     return new_lists, candidates
 
 
 # 保存pkl文件
 def save_load_candidate(candidates):
-    json.dump(candidates, open(candidate_file, 'w'), ensure_ascii=False, indent=2)
+    json.dump(candidates, open(candidate_file, 'w'),
+              ensure_ascii=False, indent=2)
 
 
 # 更新candidate的权重
@@ -104,7 +107,8 @@ def candidate_weight_sum():
         pprint('Candidate json file not exists')
     else:
         candidates = json.load(open(candidate_file, 'r'))
-        print(np.sum([weight['probability'] for weight in list(candidates.values())]))
+        print(np.sum([weight['probability']
+                      for weight in list(candidates.values())]))
 
 
 # 测试使用打印信息
@@ -140,7 +144,7 @@ def get_choice_probability(values):
 def main_process():
     all_files = get_all_files()
     new_lists, candidates = load_candidate(all_files)
-    choice_file =[]
+    choice_file = []
     if new_lists:
         choice_file.extend(new_lists)
     else:
@@ -150,9 +154,11 @@ def main_process():
             files.append(key)
             weights.append(value)
         weights = get_choice_probability(weights)
-        choice_file.extend(np.random.choice(files, size=choice_size, replace=False, p=weights))
+        choice_file.extend(np.random.choice(
+            files, size=choice_size, replace=False, p=weights))
 
-        candidates = update_candidate_weights(choice_file, all_files, candidates)
+        candidates = update_candidate_weights(
+            choice_file, all_files, candidates)
 
     save_load_candidate(candidates)
     return [(file, candidates[file]['counter']) for file in choice_file]
