@@ -44,3 +44,7 @@ wine_path = os.path.join(root_corpus_dir, 'wine.csv')
 imdb_train_path = os.path.join(root_corpus_dir, 'aclImdb/train')
 imdb_test_path = os.path.join(root_corpus_dir, 'aclImdb/test')
 imdb_vocab = os.path.join(root_outs_dir, 'imdb.vocab')
+
+# user_dict and stopwords
+stopword_path = os.path.join(root_dir, 'data-processing/stopwords/stopword.txt')
+userdict_path = os.path.join(root_dir, 'data-processing/userdicts/userdict.txt')

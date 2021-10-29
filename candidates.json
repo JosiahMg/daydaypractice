@@ -74,5 +74,9 @@
   "python-package\\torch_use\\model_save_load.py": {
     "probability": 0.05040648686141279,
     "counter": 1
+  },
+  "data-processing\\jieba_tokenizer.py": {
+    "probability": 0.0,
+    "counter": 1
   }
 }

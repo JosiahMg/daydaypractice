@@ -18,6 +18,9 @@
 ## dataset_wine.py
 使用 wine.csv 构造torch.Dataset
 
+## jieba_tokeinzer.py
+jieba分词器的使用
+
 ## vocab_template.py
 使用 aclImdb 构造vocab
 
