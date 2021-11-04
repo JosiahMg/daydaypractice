@@ -11,7 +11,7 @@ from typing import List, Text
 # 保存复习进度的文件
 candidate_file = 'candidates.json'
 # 需要复习的文件夹
-base_dirs = ['data-processing', 'models', 'python-package']
+base_dirs = ['data_processing', 'models', 'python_package']
 # 忽略不需要复习的文件
 ignore_file = ['config.py', 'main.py']
 # 需要复习的次数

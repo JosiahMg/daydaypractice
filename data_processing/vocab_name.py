@@ -31,16 +31,18 @@ class NameVocab:
     构建字典:
     train_data.keys(): ['name', 'country']
     """
+
     def __init__(self):
         self.train_data_path = config.name_train_path
         self._id2country = []
 
         self.build_vocab()
 
-        reverse = lambda x: dict(zip(x, range(len(x))))
+        def reverse(x): return dict(zip(x, range(len(x))))
         self._country2id = reverse(self._id2country)
 
-        logging.info("Build vocab: words %d, labels %d." % (self.name_size, self.country_size))
+        logging.info("Build vocab: words %d, labels %d." %
+                     (self.name_size, self.country_size))
 
     def build_vocab(self):
         data = pd.read_csv(self.train_data_path, encoding='utf-8', header=[0])
@@ -75,5 +77,3 @@ if __name__ == '__main__':
     vocab = NameVocab()
     print(vocab.country_size)
     print(vocab.name_size)
-
-

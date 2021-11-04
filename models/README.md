@@ -6,3 +6,6 @@ torch实现线性回归
 
 # logistic_by_torch.py
 torch实现逻辑回归
+
+# seq2seq.py
+seq2seq模型

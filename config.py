@@ -48,3 +48,11 @@ imdb_vocab = os.path.join(root_outs_dir, 'imdb.vocab')
 # user_dict and stopwords
 stopword_path = os.path.join(root_dir, 'data-processing/stopwords/stopword.txt')
 userdict_path = os.path.join(root_dir, 'data-processing/userdicts/userdict.txt')
+
+# math
+math_path = os.path.join(root_corpus_dir, 'math')
+train_math_path = os.path.join(math_path, 'train.ape.json')
+test_math_path = os.path.join(math_path, 'test.ape.json')
+valid_math_path = os.path.join(math_path, 'valid.ape.json')
+
+math_solve_path = os.path.join(root_outs_dir, 'math_solve.csv')
