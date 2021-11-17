@@ -1,15 +1,17 @@
 import torch
 import torch.nn as nn
+import config
+from vocabs.vocab_number import vocab
 
 
 class Encoder(nn.Module):
     def __init__(self) -> None:
         super(Encoder, self).__init__()
         self.embedding = nn.Embedding(
-            num_embeddings=num_dict, embedding_dim=emb_size, padding_idx=vocab.PAD)
+            num_embeddings=len(vocab), embedding_dim=config.number_emb_size, padding_idx=vocab.PAD)
 
-        self.gru = torch.nn.GRU(input_size=emb_size, num_layers=num_layer,
-                                hidden_size=hidden_size, batch_first=True, bidirectional=False)
+        self.gru = torch.nn.GRU(input_size=config.number_emb_size, num_layers=config.number_num_layer,
+                                hidden_size=config.number_hidden_size, batch_first=True, bidirectional=False)
 
     def forward(self, x, x_len):
         embeded = self.embedding(x)  # (batch, max_len, emb_size)

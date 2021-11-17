@@ -14,10 +14,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 from pprint import pprint
-
-
-seq_max_len = 9
-batch_size = 128
+import config
 
 # 1. 构造词典
 
@@ -52,13 +49,15 @@ def collate_fn(batch):
     batch = sorted(batch, key=lambda x: x[3], reverse=True)
     inputs, labels, input_len, label_len = list(zip(*batch))
 
-    inputs = torch.LongTensor([vocab.transform(i, max_len=seq_max_len, add_eos=False)
+    inputs = torch.LongTensor([vocab.transform(i, max_len=config.number_seq_max_len, add_eos=False)
                                for i in inputs])
-    labels = torch.LongTensor([vocab.transform(i, max_len=seq_max_len, add_eos=True)
+    labels = torch.LongTensor([vocab.transform(i, max_len=config.number_seq_max_len, add_eos=True)
                                for i in labels])
 
-    input_len = [x if x < seq_max_len else seq_max_len for x in input_len]
-    label_len = [x if x < seq_max_len else seq_max_len for x in label_len]
+    input_len = [
+        x if x < config.number_seq_max_len else config.number_seq_max_len for x in input_len]
+    label_len = [
+        x if x < config.number_seq_max_len+1 else config.number_seq_max_len+1 for x in label_len]
 
     input_len = torch.LongTensor(input_len)
     label_len = torch.LongTensor(label_len)
@@ -69,12 +68,12 @@ def collate_fn(batch):
 num_dataset = NumDataset()
 # 构造DataLoader
 train_data_loader = DataLoader(
-    num_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
+    num_dataset, batch_size=config.number_batch_size, shuffle=True, collate_fn=collate_fn)
 
 if __name__ == '__main__':
     for inputs, labels, input_len, target_len in train_data_loader:
-        print('inputs:', inputs.shape)
-        print('labels: ', labels.shape)
+        print('inputs:', inputs)
+        print('labels: ', labels)
         print('inputs len: ', input_len)
         print('target_len: ', target_len)
         break
