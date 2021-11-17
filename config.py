@@ -1,5 +1,7 @@
 import os
 
+#################### common begin ####################
+
 # 项目根目录
 root_dir = os.path.dirname(__file__)
 # 项目语料原始数据目录
@@ -10,26 +12,45 @@ root_outs_dir = os.path.join(root_dir, 'corpus/final')
 # 所有ai问答的csv文件
 ai_corpus_path = os.path.join(root_corpus_dir, 'ai')
 
+# 生成的模型保存路径
+warehouse_path = os.path.join(root_dir, 'warehouse')
+
+#################### common end ####################
+
+
+#################### tianchi begin ####################
+
 # 天池新闻脱敏数据集
 tianchi_news_root_path = os.path.join(root_corpus_dir, 'tianchi_news')
 tianchi_news_train_path = os.path.join(tianchi_news_root_path, 'train_set.csv')
 tianchi_news_test_a_path = os.path.join(tianchi_news_root_path, 'test_a.csv')
 tianchi_news_test_b_path = os.path.join(tianchi_news_root_path, 'test_b.csv')
 # 生成的文件用于fasttext分类训练
-tianchi_news_fasttext_classify = os.path.join(root_outs_dir, 'train_fasttext.csv')
+tianchi_news_fasttext_classify = os.path.join(
+    root_outs_dir, 'train_fasttext.csv')
 
+#################### tianchi begin ####################
 
 # corpus in one time
 gensim_corpus = os.path.join(root_corpus_dir, 'gensim_corpus.txt')
 
+
+#################### xiaohuangji begjin ####################
 # 小黄鸡
 xiaohuangji_corpus = os.path.join(root_corpus_dir, 'xiaohuangji.conv')
 # 处理后的小黄鸡
 xiaohuangji_csv = os.path.join(root_outs_dir, 'xiaohuangji.csv')
 
-# name
+#################### xiaohuangji end ####################
+
+
+#################### name begjin ####################
+
 name_train_path = os.path.join(root_corpus_dir, 'name/names_train.csv')
 name_test_path = os.path.join(root_corpus_dir, 'name/names_test.csv')
+
+#################### name end ####################
+
 
 # 通过字典的形式生成csv文件
 dict_csv_path = os.path.join(root_outs_dir, 'dict_csv.csv')
@@ -43,16 +64,20 @@ wine_path = os.path.join(root_corpus_dir, 'wine.csv')
 # imdb sentiment pos and neg
 imdb_train_path = os.path.join(root_corpus_dir, 'aclImdb/train')
 imdb_test_path = os.path.join(root_corpus_dir, 'aclImdb/test')
-imdb_vocab = os.path.join(root_outs_dir, 'imdb.vocab')
+imdb_vocab = os.path.join(warehouse_path, 'imdb.vocab')
 
 # user_dict and stopwords
-stopword_path = os.path.join(root_dir, 'data-processing/stopwords/stopword.txt')
-userdict_path = os.path.join(root_dir, 'data-processing/userdicts/userdict.txt')
+stopword_path = os.path.join(
+    root_dir, 'data-processing/stopwords/stopword.txt')
+userdict_path = os.path.join(
+    root_dir, 'data-processing/userdicts/userdict.txt')
 
-# math
+
+#################### math begin ####################
 math_path = os.path.join(root_corpus_dir, 'math')
 train_math_path = os.path.join(math_path, 'train.ape.json')
 test_math_path = os.path.join(math_path, 'test.ape.json')
 valid_math_path = os.path.join(math_path, 'valid.ape.json')
 
 math_solve_path = os.path.join(root_outs_dir, 'math_solve.csv')
+#################### math end ####################
