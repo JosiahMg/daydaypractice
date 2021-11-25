@@ -1,9 +1,15 @@
+""" 
+使用skearn自带的load_breast_cancer数据集训练逻辑回归
+"""
+
+
 # 1) Design model (input, output size, forward pass)
 # 2) Construct loss and optimizer
 # 3) Training loop
 #  - forward pass： compute prediction and loss
 #  - backward pass:gradients
 #  - update weights
+
 
 import torch
 import torch.nn as nn
@@ -23,8 +29,8 @@ n_input_features = n_features
 n_output_features = 1
 
 
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=1234)
 
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
@@ -40,6 +46,7 @@ y_test = y_test.view(y_test.shape[0], 1)
 
 # 1) model
 # f = wx + b, sigmoid at the end
+
 
 class LogisticRegress(nn.Module):
     def __init__(self, n_input_features, n_output_features):
@@ -75,13 +82,12 @@ for epoch in range(num_epochs):
     # zero grad
     optimizer.zero_grad()
 
-    if (epoch+1)%10 == 0:
+    if (epoch+1) % 10 == 0:
         print(f'epoch = {epoch+1} loss = {loss.item():.4f}')
 
 with torch.no_grad():
-    model.eval() # 作用是让dropout全部生效
+    model.eval()  # 作用是让dropout全部生效
     y_predicted = model(X_test)
     y_predicted_cls = y_predicted.round()
     acc = y_predicted_cls.eq(y_test).sum().item() / float(y_test.shape[0])
     print(f'accuracy = {acc:.4f}')
-

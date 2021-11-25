@@ -1,5 +1,5 @@
 """
-功能说明:
+功能说明:  config.xiaohuangji_corpus
 将小黄鸡语料合并成QA格式的数据
 
 输入数据格式:
@@ -34,7 +34,7 @@ def create2csv_all_in_one():
     with open(config.xiaohuangji_corpus, encoding='utf-8') as f:
         flag = 0
         df = pd.DataFrame(columns=['question', 'answer'])  # KEYPOINT
-        df_dict = {} # KEYPOINT
+        df_dict = {}  # KEYPOINT
         for line in tqdm(f.readlines()):
             if line.startswith('E'):
                 continue
@@ -45,11 +45,12 @@ def create2csv_all_in_one():
                 df_dict['answer'] = line[2:].strip()
                 # 如果question和answer都存在时则保存
                 if df_dict['question'] and df_dict['answer']:
-                    df = df.append([df_dict]) # KEYPOINT
+                    df = df.append([df_dict])  # KEYPOINT
                 flag = 0
 
     # index=False必须指定，否则生成的文件最左侧会出现index
-    df.to_csv(config.xiaohuangji_csv, encoding='utf-8', sep=',', index=False) # KEYPOINT
+    df.to_csv(config.xiaohuangji_csv, encoding='utf-8',
+              sep=',', index=False)  # KEYPOINT
 
 
 def create2csv_block(block=1000):
@@ -65,6 +66,8 @@ def create2csv_block(block=1000):
         df_dict = {}
         for line in tqdm(f.readlines()):
             if line.startswith('E'):
+                flag = 0
+                df_dict.clear()
                 continue
             elif line.startswith('M') and flag == 0:
                 df_dict['question'] = line[2:].strip()
@@ -78,15 +81,15 @@ def create2csv_block(block=1000):
                         # header=False: 不添加coulums
                         df.to_csv(config.xiaohuangji_csv, mode=('a' if count else 'w'),
                                   encoding='utf-8', sep=',', index=False,
-                                  header=(False if count else True)) # KEYPOINT
+                                  header=(False if count else True))  # KEYPOINT
                         df.drop(df.index, inplace=True)  # KEYPOINT
                     df = df.append([df_dict])
                     count += 1
                 flag = 0
         # 最终的数据也需要写入
-        df.to_csv(config.xiaohuangji_csv, encoding='utf-8',  mode='a', sep=',', index=False, header=False)
+        df.to_csv(config.xiaohuangji_csv, encoding='utf-8',
+                  mode='a', sep=',', index=False, header=False)
 
 
 if __name__ == '__main__':
     create2csv_block()
-

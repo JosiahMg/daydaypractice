@@ -53,7 +53,6 @@ logging.error('This is error log')
 logging.critical('This is critical log')
 
 
-
 """
     高级用法(推荐)
     记录器(笔)
@@ -96,5 +95,3 @@ logger.info('This is info log')
 logger.warning('This is warning log')
 logger.error('This is error log')
 logger.critical('This is critical log')
-
-

@@ -1,16 +1,23 @@
 """
-功能说明:
+功能描述:
+1. 实现迭代器类
 Corpus Streaming – One Document at a Time
-为了防止一次性读取内存过多数据,使用迭代器解决,一次读取一个document
+通过迭代类型的class，防止一次性读取内存过多数据,使用迭代器解决,一次读取一个document
 
-输入数据格式:
-csv的数据格式为:
-colums = [label:int \t text: Text]
+输入数据格式: config.gensim_corpus  (gensim_corpus.txt)
+英文文本，通过空格隔开
 
-输出数据格式: iter(List[List[Tuple[index: int, couter: int]]])
-
-用途:
-可用于 gensim模型的训练数据 训练分类任务
+2. 使用gensim的corpora类生成词典
+语料：
+[['human', 'interface', 'computer'],
+                    ['survey', 'user', 'computer', 'system', 'response', 'time'],
+                    ['eps', 'user', 'interface', 'system'],
+                    ['system', 'human', 'system', 'eps'],
+                    ['user', 'response', 'time'],
+                    ['trees'],
+                    ['graph', 'trees'],
+                    ['graph', 'minors', 'trees'],
+                    ['graph', 'minors', 'survey']]
 
 """
 import config
@@ -33,12 +40,14 @@ processed_corpus = [['human', 'interface', 'computer'],
 dictionary = corpora.Dictionary(processed_corpus)
 
 # 迭代器，读取语料库
+
+
 class MyCorpus:
-    def __iter__(self): # KEYPOINT
+    def __iter__(self):  # KEYPOINT
         # for line in open(corpus_file):
         for line in open('https://radimrehurek.com/gensim_3.8.3/auto_examples/core/mycorpus.txt'):
             # assume there's one document per line, tokens separated by whitespace
-            yield dictionary.doc2bow(line.lower().split()) # KEYPOINT
+            yield dictionary.doc2bow(line.lower().split())  # KEYPOINT
 
 
 corpus_memory_friendly = MyCorpus()  # doesn't load the corpus into memory!

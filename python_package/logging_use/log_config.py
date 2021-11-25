@@ -1,5 +1,6 @@
 """
-使用logging.config作为未知文件
+功能描述:
+使用logging模块的配置文件形式，只做了解
 
 """
 import logging.config
@@ -22,4 +23,3 @@ try:
     int(a)
 except Exception as e:
     logger.exception(e)
-

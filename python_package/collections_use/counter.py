@@ -2,6 +2,10 @@
 用途:
 Counter是一个dict子类，主要是用来对你访问的对象的频率进行计数。
 通常用于构造词典
+数据集：
+Our legislation on participating in a bid is clear: no one can be prohibited, said Mourao, \
+adding the only thing the company must do is to demonstrate its \
+transparency (in keeping) with the rules that will be established for the process.
 
 常用方法：
 elements()：返回一个迭代器，每个元素重复计算的个数，如果一个元素的计数小于1,就会被忽略。
